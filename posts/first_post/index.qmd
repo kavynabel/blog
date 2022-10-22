@@ -1,0 +1,23 @@
+---
+title: "Interactive Stock App"
+author: "Kavyn Abel"
+date: "2022-10-22"
+---
+
+I have been working with and analyzing stock data pulled from yahoo finance which provides financial news including stock quotes and financial reports.
+
+<!-- Code chunk showing how import pandas data reader and then use it to get yahoo finance data. -->
+
+I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.
+
+Here are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.
+
+![](stock_app.jpg)
+
+![](stock_app_chart.jpg)
+
+This has been so cool to use the user inputs to display a dataframe of the stock closing price over their chosen time period and to show it in a chart!
+
+The next item I am working on is a widget that will show the user the percentage increase or decrease of the stock over the given time frame.
+
+For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started
