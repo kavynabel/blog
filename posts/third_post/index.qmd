@@ -1,0 +1,26 @@
+---
+title: "A Thought on For Loops and Streamlit Widgets"
+author: "Kavyn Abel"
+date: "2022-11-03"
+---
+
+Hello everybody, in my last post I showed how we can make lists work in streamlit. In applying that to my own stock app the list worked, but I ran into this problem. An error message saying, "streamlit error: DuplicateWidgetID: There are multiple identical st.text_input widgets with the same generated key."
+
+Now what does that mean?
+
+After a little research I came to know that input widgets such as text input, buttons, download buttons, date input etc... (https://docs.streamlit.io/library/api-reference/widgets) when they are created have a unique key tied to them in the backend.
+
+I had my text input widgets assigned to a variable, and when looping through my list and running this command it was trying to duplicate the widget, having the same key, which is a no go in streamlit. I learned that you can add an additional argument to these widgets called key which sets the key of that widget.
+
+To make this text widget, that was repeating in the loop, have a different key each time here is what I did.
+
+I created my list and started a count variable outside of the for loop.
+![](post3_image1.jpg)
+
+Inside the loop I added 1 to the count every time it went through the loop.
+![](post3_image2.jpg)
+
+I assigned this changing variable as the key of my widget.
+![](post3_image3.jpg)
+
+This way I do not see the DuplicateWidgetID error, as the widget now has a changing key.

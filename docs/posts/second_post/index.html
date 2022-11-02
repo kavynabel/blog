@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kavyn Abel">
-<meta name="dcterms.date" content="2022-10-22">
+<meta name="dcterms.date" content="2022-11-02">
 
-<title>myblog - Interactive Stock App</title>
+<title>myblog - Lists in Streamlit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Interactive Stock App</h1>
+      <h1 class="title">Lists in Streamlit</h1>
                       </div>
   </div>
     
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 22, 2022</p>
+        <p class="date">November 2, 2022</p>
       </div>
     </div>
       
@@ -133,15 +133,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I have been working with and analyzing stock data pulled from yahoo finance which provides financial news including stock quotes and financial reports.</p>
-<!-- Code chunk showing how import pandas data reader and then use it to get yahoo finance data. -->
-<p>I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.</p>
-<p>Here are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.</p>
-<p><img src="stock_app.jpg" class="img-fluid"></p>
-<p><img src="stock_app_chart.jpg" class="img-fluid"></p>
-<p>This has been so cool to use the user inputs to display a dataframe of the stock closing price over their chosen time period and to show it in a chart!</p>
-<p>The next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.</p>
-<p>For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started</p>
+<p>I want to write about my experience in trying to incorporate lists into a streamlit app, and hope that this will help you.</p>
+<p>In my last post I introduced my interactive stock app. I wanted to allow the user to input however many stocks they want to look it, and have the program show data, charts, and other metrics for each stock. I felt that an easy way to do this would be with a list. Put all the input stocks into a list and then run all my code through a for loop.</p>
+<p>I attempted making a variable for a list, then appending the user input to the list each time they typed something in. It didn’t work, and with some time and research I learned that the page was essentially refreshing when I entered input and hit enter. So always the only thing in the list was the last thing I had put into the list. It wasn’t retaining the list variable through the refresh.</p>
+<p>Digging deeper I learned that a possible solution was with streamlit’s session state (https://docs.streamlit.io/library/api-reference/session-state). In streamlit documentation we read, “Session State is a way to share variables between reruns, for each user session. In addition to the ability to store and persist state, Streamlit also exposes the ability to manipulate state using Callbacks. Session state also persists across apps inside a multipage app.”</p>
+<p>Cool! Right? In learning and testing this I was able to have it work with a numerical variable, counting up with a button. The variable being stored and persisting through each state. But in trying to apply the logic to a list it still didn’t work. :(</p>
+<p>Puzzled, I dug even deeper. And with more research I found a conversation that happened in discuss.streamlit.io where someone was facing a similar problem. This linked me to a custom made solution by gagan3012 (https://discuss.streamlit.io/t/new-component-streamlit-tags-a-new-way-to-do-add-tags-and-enter-keywords/10810). This individual made a custom tag function called streamlit-tags. I installed it with pip install streamlit-tags in my environment on Anaconda where I have been launching my code editor from and running streamlit on.</p>
+<p>Then it was as easy as this in my code editor:</p>
+<p><img src="list_code.jpg" class="img-fluid"></p>
+<p>Running this in streamlit here is what we see</p>
+<p><img src="start_screen.jpg" class="img-fluid"></p>
+<p>You can easily input an item and see it added to the list object being displayed below</p>
+<p><img src="first_list_item.jpg" class="img-fluid"></p>
+<p>Adding a second item verifies that it is working, appending them both to the list</p>
+<p><img src="second_list_item.jpg" class="img-fluid"></p>
+<p>Finally! We are now adding user input items to a list in streamlit. Like normal we can continue to use this list of items in our code. Even run through each item in a for loop for your codes desires.</p>
+<p>It was a longer journey than I anticipated, but I am glad to have learned how to add items to a list that I can use in my apps. I hope that this helps you, and allows you to save time not going through the research and testing that I have gone through to get to this point.</p>
 
 
 

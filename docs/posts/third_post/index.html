@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kavyn Abel">
-<meta name="dcterms.date" content="2022-10-22">
+<meta name="dcterms.date" content="2022-11-03">
 
-<title>myblog - Interactive Stock App</title>
+<title>myblog - A Thought on For Loops and Streamlit Widgets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Interactive Stock App</h1>
+      <h1 class="title">A Thought on For Loops and Streamlit Widgets</h1>
                       </div>
   </div>
     
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 22, 2022</p>
+        <p class="date">November 3, 2022</p>
       </div>
     </div>
       
@@ -133,15 +133,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I have been working with and analyzing stock data pulled from yahoo finance which provides financial news including stock quotes and financial reports.</p>
-<!-- Code chunk showing how import pandas data reader and then use it to get yahoo finance data. -->
-<p>I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.</p>
-<p>Here are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.</p>
-<p><img src="stock_app.jpg" class="img-fluid"></p>
-<p><img src="stock_app_chart.jpg" class="img-fluid"></p>
-<p>This has been so cool to use the user inputs to display a dataframe of the stock closing price over their chosen time period and to show it in a chart!</p>
-<p>The next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.</p>
-<p>For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started</p>
+<p>Hello everybody, in my last post I showed how we can make lists work in streamlit. In applying that to my own stock app the list worked, but I ran into this problem. An error message saying, “streamlit error: DuplicateWidgetID: There are multiple identical st.text_input widgets with the same generated key.”</p>
+<p>Now what does that mean?</p>
+<p>After a little research I came to know that input widgets such as text input, buttons, download buttons, date input etc… (https://docs.streamlit.io/library/api-reference/widgets) when they are created have a unique key tied to them in the backend.</p>
+<p>I had my text input widgets assigned to a variable, and when looping through my list and running this command it was trying to duplicate the widget, having the same key, which is a no go in streamlit. I learned that you can add an additional argument to these widgets called key which sets the key of that widget.</p>
+<p>To make this text widget, that was repeating in the loop, have a different key each time here is what I did.</p>
+<p>I created my list and started a count variable outside of the for loop. <img src="post3_image1.jpg" class="img-fluid"></p>
+<p>Inside the loop I added 1 to the count every time it went through the loop. <img src="post3_image2.jpg" class="img-fluid"></p>
+<p>I assigned this changing variable as the key of my widget. <img src="post3_image3.jpg" class="img-fluid"></p>
+<p>This way I do not see the DuplicateWidgetID error, as the widget now has a changing key.</p>
 
 
 

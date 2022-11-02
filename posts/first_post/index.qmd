@@ -18,6 +18,6 @@ Here are some images of what I have going so far. I allow the user to choose the
 
 This has been so cool to use the user inputs to display a dataframe of the stock closing price over their chosen time period and to show it in a chart!
 
-The next item I am working on is a widget that will show the user the percentage increase or decrease of the stock over the given time frame.
+The next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.
 
 For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started

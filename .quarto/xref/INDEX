@@ -16,5 +16,11 @@
   },
   "posts/first_post/index.qmd": {
     "index.html": "f6af5166"
+  },
+  "posts/second_post/index.qmd": {
+    "index.html": "2e789a3f"
+  },
+  "posts/third_post/index.qmd": {
+    "index.html": "db06b8b1"
   }
 }
