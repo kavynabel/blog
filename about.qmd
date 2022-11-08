@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: profile.jpg
+image: author_pic.jpg
 about:
   template: jolla
   links:
@@ -13,4 +13,4 @@ about:
 
 ---
 
-About this blog
+This blog is a space where I can write about my data science projects, the things I learn, and ideas that may help others. I am graduating with a bachelor's in data science from Brigham Young University - Idaho. I am passionate about solving problems with code.
