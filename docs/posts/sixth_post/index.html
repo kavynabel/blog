@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kavyn Abel">
-<meta name="dcterms.date" content="2022-10-22">
 
-<title>myblog - Interactive Stock App</title>
+<title>myblog - Loc, iloc, at, iat</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Interactive Stock App</h1>
+      <h1 class="title">Loc, iloc, at, iat</h1>
                       </div>
   </div>
     
@@ -116,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 22, 2022</p>
+        <p class="date">Invalid Date</p>
       </div>
     </div>
       
@@ -133,18 +132,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I have been working with and analyzing stock data pulled from yahoo finance which provides financial news including stock quotes and financial reports.</p>
-<p>I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.</p>
-<p>Here are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.</p>
-<p><img src="stock_app.jpg" class="img-fluid"></p>
-<p><img src="stock_app_chart.jpg" class="img-fluid"></p>
-<p>Here is the code that I used to import what is called pandas data reader, which I used to get and graph stock data. I received inputs from the user which I then put in this get_data_yahoo function to pull the stock they want across the times they’d like to see it.</p>
-<pre><code>from pandas_datareader import data as pdr
-
-stock_data = pdr.get_data_yahoo(f"{stock_ticker_symbol}", start= f"{start_date}", end= f"{end_date}").reset_index()</code></pre>
-<p>stock_ticker_symbol, start_date, and end_date are variables I collected from the user as shown in the first image above. This allows me to pull the stock the user chooses, at the time frame they want, and pull that data to display to them a table and graph! It’s really neat.</p>
-<p>The next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.</p>
-<p>For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started</p>
+<p>Help others know what these are as it was a while before I did and they are super helpful.</p>
 
 
 

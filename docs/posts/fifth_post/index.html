@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kavyn Abel">
-<meta name="dcterms.date" content="2022-10-22">
+<meta name="dcterms.date" content="2022-11-17">
 
-<title>myblog - Interactive Stock App</title>
+<title>myblog - Multi-Page Finance Streamlit App</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Interactive Stock App</h1>
+      <h1 class="title">Multi-Page Finance Streamlit App</h1>
                       </div>
   </div>
     
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 22, 2022</p>
+        <p class="date">November 17, 2022</p>
       </div>
     </div>
       
@@ -133,18 +133,28 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I have been working with and analyzing stock data pulled from yahoo finance which provides financial news including stock quotes and financial reports.</p>
-<p>I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.</p>
-<p>Here are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.</p>
-<p><img src="stock_app.jpg" class="img-fluid"></p>
-<p><img src="stock_app_chart.jpg" class="img-fluid"></p>
-<p>Here is the code that I used to import what is called pandas data reader, which I used to get and graph stock data. I received inputs from the user which I then put in this get_data_yahoo function to pull the stock they want across the times they’d like to see it.</p>
-<pre><code>from pandas_datareader import data as pdr
-
-stock_data = pdr.get_data_yahoo(f"{stock_ticker_symbol}", start= f"{start_date}", end= f"{end_date}").reset_index()</code></pre>
-<p>stock_ticker_symbol, start_date, and end_date are variables I collected from the user as shown in the first image above. This allows me to pull the stock the user chooses, at the time frame they want, and pull that data to display to them a table and graph! It’s really neat.</p>
-<p>The next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.</p>
-<p>For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started</p>
+<p>I am excited to share that I have learned how to create a multi-page streamlit app! This helps a me gather all my financial streamlit apps into one space, allowing more convenience for the user in accessing and navigating my resources that I have created.</p>
+<p>Now, in previous blog posts I have talked about my stock streamlit app and my stock back tester. Additionally, I have made a retirement planning app that helps users see the future value of their investments at the time they plan to retire. To make this easier for users, and to expand my streamlit knowledge and skills, I wanted to combine all of these into a single space. For this reason, I learned how to make a multi-page app and I want to share this knowledge with you.</p>
+<p>Now the first step is to make a file for the home page of your app. This is the file that users will first see and to which all of your apps will be attached to as additional pages. This is very easy as you can simply create a home.py file. Now when you run streamlit you will run from your home.py file as the basis of the multi-page app like so:</p>
+<pre><code>streamlit run home.py</code></pre>
+<p>Now, if you have not added any code to your home.py it will show up blank. I added simple streamlit code like st.title() and st.write() to put some information on my home page. Here is what mine looks like:</p>
+<p><img src="my_home_page.jpg" class="img-fluid"></p>
+<p>You can see that I have an image on my home page. This is an easy add. I created an images folder at the same level as my home.py file. This is where you can add any images that you’s like to use.</p>
+<p><img src="images_folder.jpg" class="img-fluid"></p>
+<p>Then in my home.py file I used this code:</p>
+<pre><code>st.image("images/file_name.jpg", caption = "", width = 500)</code></pre>
+<p>This follows the path and pulls the image in. You can include a caption if desired and adjust the width of the image. Easy money.</p>
+<p>Now, how can we attach all of our built apps to this? Luckily it is super easy! Create a pages folder that is at the same level as your home.py file (the same way you did if you made an images folder).</p>
+<p><img src="pages_folder.jpg" class="img-fluid"></p>
+<p>Then, throw in each of your python files that contain your different apps into that pages folder. Here is an example of what mine looks like:</p>
+<p><img src="pages_in.jpg" class="img-fluid"></p>
+<p>Here is a picture note from streamlit documentation about creating multiple pages:</p>
+<p><img src="multiple_page_notes.jpg" class="img-fluid"></p>
+<p>Now when we reload the streamlit app in our browser it will show a left hand side bar containing the different files as their own pages of the app.</p>
+<p><img src="home_w_sidebar.jpg" class="img-fluid"></p>
+<p>You will see that by clicking on these pages (which consist of streamlit apps that I have already made) that they will be shown on the screen and usable just as they could by themsleves.</p>
+<p><img src="page_change.jpg" class="img-fluid"></p>
+<p>Super cool! Now we have all of our apps into one space!</p>
 
 
 

@@ -1,0 +1,7 @@
+---
+title: "Loc, iloc, at, iat"
+author: "Kavyn Abel"
+date: "2022-11-__"
+---
+
+Help others know what these are as it was a while before I did and they are super helpful.

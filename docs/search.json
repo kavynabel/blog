@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "myblog",
     "section": "",
-    "text": "Nov 3, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 2, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 22, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\nNo matching items"
+    "text": "Nov 17, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 15, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 3, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 2, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 22, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nKavyn Abel\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -32,7 +32,7 @@
     "href": "posts/first_post/index.html",
     "title": "Interactive Stock App",
     "section": "",
-    "text": "I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.\nHere are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.\n\n\nThis has been so cool to use the user inputs to display a dataframe of the stock closing price over their chosen time period and to show it in a chart!\nThe next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.\nFor anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started"
+    "text": "I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.\nHere are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.\n\n\nHere is the code that I used to import what is called pandas data reader, which I used to get and graph stock data. I received inputs from the user which I then put in this get_data_yahoo function to pull the stock they want across the times they’d like to see it.\nfrom pandas_datareader import data as pdr\n\nstock_data = pdr.get_data_yahoo(f\"{stock_ticker_symbol}\", start= f\"{start_date}\", end= f\"{end_date}\").reset_index()\nstock_ticker_symbol, start_date, and end_date are variables I collected from the user as shown in the first image above. This allows me to pull the stock the user chooses, at the time frame they want, and pull that data to display to them a table and graph! It’s really neat.\nThe next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.\nFor anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started"
   },
   {
     "objectID": "posts/second_post/index.html",
@@ -47,5 +47,26 @@
     "title": "A Thought on For Loops and Streamlit Widgets",
     "section": "",
     "text": "Now what does that mean?\nAfter a little research I came to know that input widgets such as text input, buttons, download buttons, date input etc… (https://docs.streamlit.io/library/api-reference/widgets) when they are created have a unique key tied to them in the backend.\nI had my text input widgets assigned to a variable, and when looping through my list and running this command it was trying to duplicate the widget, having the same key, which is a no go in streamlit. I learned that you can add an additional argument to these widgets called key which sets the key of that widget.\nTo make this text widget, that was repeating in the loop, have a different key each time here is what I did.\nI created my list and started a count variable outside of the for loop. \nInside the loop I added 1 to the count every time it went through the loop. \nI assigned this changing variable as the key of my widget. \nThis way I do not see the DuplicateWidgetID error, as the widget now has a changing key."
+  },
+  {
+    "objectID": "posts/fourth_post/index.html",
+    "href": "posts/fourth_post/index.html",
+    "title": "Stock Back Tester",
+    "section": "",
+    "text": "Here is the opening page of what I came up with:\n\nThis is a simple and easy interface that allows the user to input the ticker symbol for a stock and see the 10 year back test. Here is an example of what is shown after a user types in the ticker symbol for Microsoft.\n\nThis chart shows us the stock’s closing price over the last 10 years! I report to the user the average yearly growth and the current price of Microsoft stock.\nIf there is a decrease in the stock price over the 10 years then I display to the user the average yearly decrease in the stock closing price.\nNow what if a company has not been around for 10 years? Well, the neat thing with the way I am pulling my stock data is that in using pandas data reader(pdr) and the get_data_yahoo function (see my October 22, 2022 post on my Interactive Stock App) does not forcibly pull the arbitrary 10 year back test date if it is not available. It will pull up to the most recent data that it has. What’s cool about this is that no matter what stock is pulled I can get the first row of that dataframe (as it is in date order) and extract the date, and use that date for the rest of my backend coding. This way it will have the corect date above the output graph, and tell corectly over the last (blank) number of years, what the average yearly increase or decrease is in that stock price.\nHere is an example of a stock (COIN) that has not been around for 10 years:\n\nSweet! See how the date at the top is starting at 2021-04-14? Also, note how underneath the graph it states that over the last 1 year (not 10 years) there has been an average yearly decrease.\nThis is definitely a great tool for those wanting to see if a potential company stock may be a good investment. And, it has been fun to make! Thanks for reading!"
+  },
+  {
+    "objectID": "posts/fifth_post/index.html",
+    "href": "posts/fifth_post/index.html",
+    "title": "Multi-Page Finance Streamlit App",
+    "section": "",
+    "text": "Now, in previous blog posts I have talked about my stock streamlit app and my stock back tester. Additionally, I have made a retirement planning app that helps users see the future value of their investments at the time they plan to retire. To make this easier for users, and to expand my streamlit knowledge and skills, I wanted to combine all of these into a single space. For this reason, I learned how to make a multi-page app and I want to share this knowledge with you.\nNow the first step is to make a file for the home page of your app. This is the file that users will first see and to which all of your apps will be attached to as additional pages. This is very easy as you can simply create a home.py file. Now when you run streamlit you will run from your home.py file as the basis of the multi-page app like so:\nstreamlit run home.py\nNow, if you have not added any code to your home.py it will show up blank. I added simple streamlit code like st.title() and st.write() to put some information on my home page. Here is what mine looks like:\n\nYou can see that I have an image on my home page. This is an easy add. I created an images folder at the same level as my home.py file. This is where you can add any images that you’s like to use.\n\nThen in my home.py file I used this code:\nst.image(\"images/file_name.jpg\", caption = \"\", width = 500)\nThis follows the path and pulls the image in. You can include a caption if desired and adjust the width of the image. Easy money.\nNow, how can we attach all of our built apps to this? Luckily it is super easy! Create a pages folder that is at the same level as your home.py file (the same way you did if you made an images folder).\n\nThen, throw in each of your python files that contain your different apps into that pages folder. Here is an example of what mine looks like:\n\nHere is a picture note from streamlit documentation about creating multiple pages:\n\nNow when we reload the streamlit app in our browser it will show a left hand side bar containing the different files as their own pages of the app.\n\nYou will see that by clicking on these pages (which consist of streamlit apps that I have already made) that they will be shown on the screen and usable just as they could by themsleves.\n\nSuper cool! Now we have all of our apps into one space!"
+  },
+  {
+    "objectID": "posts/sixth_post/index.html",
+    "href": "posts/sixth_post/index.html",
+    "title": "Loc, iloc, at, iat",
+    "section": "",
+    "text": "Help others know what these are as it was a while before I did and they are super helpful."
   }
 ]

@@ -2,9 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/fifth_post/index.html",
+      "/posts/fourth_post/index.html",
       "/posts/third_post/index.html",
       "/posts/second_post/index.html",
-      "/posts/first_post/index.html"
+      "/posts/first_post/index.html",
+      "/posts/sixth_post/index.html"
     ]
   }
 ]

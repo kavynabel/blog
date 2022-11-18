@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kavyn Abel">
-<meta name="dcterms.date" content="2022-10-22">
+<meta name="dcterms.date" content="2022-11-15">
 
-<title>myblog - Interactive Stock App</title>
+<title>myblog - Stock Back Tester</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Interactive Stock App</h1>
+      <h1 class="title">Stock Back Tester</h1>
                       </div>
   </div>
     
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 22, 2022</p>
+        <p class="date">November 15, 2022</p>
       </div>
     </div>
       
@@ -133,18 +133,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I have been working with and analyzing stock data pulled from yahoo finance which provides financial news including stock quotes and financial reports.</p>
-<p>I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.</p>
-<p>Here are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.</p>
-<p><img src="stock_app.jpg" class="img-fluid"></p>
-<p><img src="stock_app_chart.jpg" class="img-fluid"></p>
-<p>Here is the code that I used to import what is called pandas data reader, which I used to get and graph stock data. I received inputs from the user which I then put in this get_data_yahoo function to pull the stock they want across the times they’d like to see it.</p>
-<pre><code>from pandas_datareader import data as pdr
-
-stock_data = pdr.get_data_yahoo(f"{stock_ticker_symbol}", start= f"{start_date}", end= f"{end_date}").reset_index()</code></pre>
-<p>stock_ticker_symbol, start_date, and end_date are variables I collected from the user as shown in the first image above. This allows me to pull the stock the user chooses, at the time frame they want, and pull that data to display to them a table and graph! It’s really neat.</p>
-<p>The next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.</p>
-<p>For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started</p>
+<p>As I have continued working with stock data, it was suggested to me that a useful tool could be a stock back tester, where the user could put in a stock and get a 10 year back test on the stock to see if the stock generally goes up in price and may be a good investment.</p>
+<p>Here is the opening page of what I came up with:</p>
+<p><img src="stock_back_tester_page.jpg" class="img-fluid"></p>
+<p>This is a simple and easy interface that allows the user to input the ticker symbol for a stock and see the 10 year back test. Here is an example of what is shown after a user types in the ticker symbol for Microsoft.</p>
+<p><img src="ten_year_back_test_graph.jpg" class="img-fluid"></p>
+<p>This chart shows us the stock’s closing price over the last 10 years! I report to the user the average yearly growth and the current price of Microsoft stock.</p>
+<p>If there is a decrease in the stock price over the 10 years then I display to the user the average yearly decrease in the stock closing price.</p>
+<p>Now what if a company has not been around for 10 years? Well, the neat thing with the way I am pulling my stock data is that in using pandas data reader(pdr) and the get_data_yahoo function (see my October 22, 2022 post on my Interactive Stock App) does not forcibly pull the arbitrary 10 year back test date if it is not available. It will pull up to the most recent data that it has. What’s cool about this is that no matter what stock is pulled I can get the first row of that dataframe (as it is in date order) and extract the date, and use that date for the rest of my backend coding. This way it will have the corect date above the output graph, and tell corectly over the last (blank) number of years, what the average yearly increase or decrease is in that stock price.</p>
+<p>Here is an example of a stock (COIN) that has not been around for 10 years:</p>
+<p><img src="coin_back_test.jpg" class="img-fluid"></p>
+<p>Sweet! See how the date at the top is starting at 2021-04-14? Also, note how underneath the graph it states that over the last 1 year (not 10 years) there has been an average yearly decrease.</p>
+<p>This is definitely a great tool for those wanting to see if a potential company stock may be a good investment. And, it has been fun to make! Thanks for reading!</p>
 
 
 
