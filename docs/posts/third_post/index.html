@@ -9,7 +9,7 @@
 <meta name="author" content="Kavyn Abel">
 <meta name="dcterms.date" content="2022-11-03">
 
-<title>myblog - A Thought on For Loops and Streamlit Widgets</title>
+<title>My Blog - A Thought on For Loops and Streamlit Widgets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">myblog</span>
+    <span class="navbar-title">My Blog</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -134,6 +134,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Hello everybody, in my last post I showed how we can make lists work in streamlit. In applying that to my own stock app the list worked, but I ran into this problem. An error message saying, “streamlit error: DuplicateWidgetID: There are multiple identical st.text_input widgets with the same generated key.”</p>
+<p><img src="error.jpg" class="img-fluid"></p>
 <p>Now what does that mean?</p>
 <p>After a little research I came to know that input widgets such as text input, buttons, download buttons, date input etc… (https://docs.streamlit.io/library/api-reference/widgets) when they are created have a unique key tied to them in the backend.</p>
 <p>I had my text input widgets assigned to a variable, and when looping through my list and running this command it was trying to duplicate the widget, having the same key, which is a no go in streamlit. I learned that you can add an additional argument to these widgets called key which sets the key of that widget.</p>

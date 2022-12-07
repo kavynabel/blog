@@ -1,7 +1,23 @@
 ---
-title: "Loc, iloc, at, iat"
+title: "Know Your Monthly Mortgage Payment Easy"
 author: "Kavyn Abel"
-date: "2022-11-__"
+date: "2022-11-22"
 ---
 
-Help others know what these are as it was a while before I did and they are super helpful.
+![](house.jpg)
+
+I wanted to make a tool that can make it easy for a user to know their monthly payment for their home mortgage. Additionally, I want users to see how much faster they can pay it off if they decide to add monthly payments.
+
+Here is the initial layout of my streamlit app:
+
+![](mortgage_page.jpg)
+
+After a user enters their information, they can see the resulting monthly payment
+
+![](initial_payment.jpg)
+
+Below they can decide if they would like to add an additional monthly contribution. Based on that amount it will tell the user how much faster they will pay off their mortgage.
+
+![](adjusted_payment.jpg)
+
+This makes it easy for anyone to know and/or plan what monthly payment they can stick to, to get their mortgage paid off when they want to.

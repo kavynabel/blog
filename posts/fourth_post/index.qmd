@@ -6,6 +6,8 @@ date: "2022-11-15"
 
 As I have continued working with stock data, it was suggested to me that a useful tool could be a stock back tester, where the user could put in a stock and get a 10 year back test on the stock to see if the stock generally goes up in price and may be a good investment.
 
+![](stock_trend.jpg)
+
 Here is the opening page of what I came up with:
 
 ![](stock_back_tester_page.jpg)
@@ -18,7 +20,11 @@ This chart shows us the stock's closing price over the last 10 years! I report t
 
 If there is a decrease in the stock price over the 10 years then I display to the user the average yearly decrease in the stock closing price.
 
-Now what if a company has not been around for 10 years? Well, the neat thing with the way I am pulling my stock data is that in using pandas data reader(pdr) and the get_data_yahoo function (see my October 22, 2022 post on my Interactive Stock App) does not forcibly pull the arbitrary 10 year back test date if it is not available. It will pull up to the most recent data that it has. What's cool about this is that no matter what stock is pulled I can get the first row of that dataframe (as it is in date order) and extract the date, and use that date for the rest of my backend coding. This way it will have the corect date above the output graph, and tell corectly over the last (blank) number of years, what the average yearly increase or decrease is in that stock price.
+Now what if a company has not been around for 10 years? 
+
+![](new_business.jpg)
+
+Well, the neat thing with the way I am pulling my stock data is that in using pandas data reader(pdr) and the get_data_yahoo function (see my October 22, 2022 post on my Interactive Stock App) does not forcibly pull the arbitrary 10 year back test date if it is not available. It will pull up to the most recent data that it has. What's cool about this is that no matter what stock is pulled I can get the first row of that dataframe (as it is in date order) and extract the date, and use that date for the rest of my backend coding. This way it will have the corect date above the output graph, and tell corectly over the last (blank) number of years, what the average yearly increase or decrease is in that stock price.
 
 Here is an example of a stock (COIN) that has not been around for 10 years:
 

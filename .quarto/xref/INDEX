@@ -31,5 +31,11 @@
   },
   "posts/sixth_post/index.qmd": {
     "index.html": "09695e61"
+  },
+  "posts/seventh_post/index.qmd": {
+    "index.html": "cec3c114"
+  },
+  "posts/first_post/index.ipynb": {
+    "index.html": "90b8d597"
   }
 }

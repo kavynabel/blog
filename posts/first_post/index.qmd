@@ -8,14 +8,16 @@ I have been working with and analyzing stock data pulled from yahoo finance whic
 
 I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.
 
-Here are some images of what I have going so far. I allow the user to choose their stock along with the start and end dates that they want to observe.
+![](stock_photo.jpg)
+
+Here is what I have so far. I allow the user to choose their stock along with the start and end dates that they want to observe.
 
 ![](stock_app.jpg)
 
 ![](stock_app_chart.jpg)
 
 Here is the code that I used to import what is called pandas data reader, which I used to get and graph stock data. I received inputs from the user which I then put in this get_data_yahoo function to pull the stock they want across the times they'd like to see it.
-```
+```{{python}}
 from pandas_datareader import data as pdr
 
 stock_data = pdr.get_data_yahoo(f"{stock_ticker_symbol}", start= f"{start_date}", end= f"{end_date}").reset_index()

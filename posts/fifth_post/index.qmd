@@ -6,6 +6,8 @@ date: "2022-11-17"
 
 I am excited to share that I have learned how to create a multi-page streamlit app! This helps a me gather all my financial streamlit apps into one space, allowing more convenience for the user in accessing and navigating my resources that I have created.
 
+![](apps_in_one_place.jpg)
+
 Now, in previous blog posts I have talked about my stock streamlit app and my stock back tester. Additionally, I have made a retirement planning app that helps users see the future value of their investments at the time they plan to retire. To make this easier for users, and to expand my streamlit knowledge and skills, I wanted to combine all of these into a single space. For this reason, I learned how to make a multi-page app and I want to share this knowledge with you.
 
 Now the first step is to make a file for the home page of your app. This is the file that users will first see and to which all of your apps will be attached to as additional pages. This is very easy as you can simply create a home.py file. Now when you run streamlit you will run from your home.py file as the basis of the multi-page app like so:

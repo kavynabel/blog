@@ -6,6 +6,8 @@ date: "2022-11-03"
 
 Hello everybody, in my last post I showed how we can make lists work in streamlit. In applying that to my own stock app the list worked, but I ran into this problem. An error message saying, "streamlit error: DuplicateWidgetID: There are multiple identical st.text_input widgets with the same generated key."
 
+![](error.jpg)
+
 Now what does that mean?
 
 After a little research I came to know that input widgets such as text input, buttons, download buttons, date input etc... (https://docs.streamlit.io/library/api-reference/widgets) when they are created have a unique key tied to them in the backend.
