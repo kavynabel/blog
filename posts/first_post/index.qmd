@@ -27,4 +27,4 @@ stock_ticker_symbol, start_date, and end_date are variables I collected from the
 
 The next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.
 
-For anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started
+For anyone interested here is a link to [streamlit documentation](https://docs.streamlit.io/library/get-started).
