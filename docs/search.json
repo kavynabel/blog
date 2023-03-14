@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "myblog",
+    "title": "Data Science Blog",
     "section": "",
     "text": "Nov 22, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 17, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 15, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 3, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 2, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 22, 2022\n\n\nKavyn Abel\n\n\n\n\n\n\nNo matching items"
   },
@@ -32,7 +32,7 @@
     "href": "posts/first_post/index.html",
     "title": "Interactive Stock App",
     "section": "",
-    "text": "I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.\n\nHere is what I have so far. I allow the user to choose their stock along with the start and end dates that they want to observe.\n\n\nHere is the code that I used to import what is called pandas data reader, which I used to get and graph stock data. I received inputs from the user which I then put in this get_data_yahoo function to pull the stock they want across the times they’d like to see it.\n```{python}\nfrom pandas_datareader import data as pdr\n\nstock_data = pdr.get_data_yahoo(f\"{stock_ticker_symbol}\", start= f\"{start_date}\", end= f\"{end_date}\").reset_index()\n```\nstock_ticker_symbol, start_date, and end_date are variables I collected from the user as shown in the first image above. This allows me to pull the stock the user chooses, at the time frame they want, and pull that data to display to them a table and graph! It’s really neat.\nThe next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.\nFor anyone interested here is a link to Streamlit documentation: https://docs.streamlit.io/library/get-started"
+    "text": "I have started learning streamlit, an open-source Python library to build an interactive stock app. I want to make an easy experience for the user to see some stock analysis.\n\nHere is what I have so far. I allow the user to choose their stock along with the start and end dates that they want to observe.\n\n\nHere is the code that I used to import what is called pandas data reader, which I used to get and graph stock data. I received inputs from the user which I then put in this get_data_yahoo function to pull the stock they want across the times they’d like to see it.\n```{python}\nfrom pandas_datareader import data as pdr\n\nstock_data = pdr.get_data_yahoo(f\"{stock_ticker_symbol}\", start= f\"{start_date}\", end= f\"{end_date}\").reset_index()\n```\nstock_ticker_symbol, start_date, and end_date are variables I collected from the user as shown in the first image above. This allows me to pull the stock the user chooses, at the time frame they want, and pull that data to display to them a table and graph! It’s really neat.\nThe next item I am working on is a streamlit metric that will show the user the percentage increase or decrease of the stock over the given time frame.\nFor anyone interested here is a link to streamlit documentation."
   },
   {
     "objectID": "posts/second_post/index.html",
